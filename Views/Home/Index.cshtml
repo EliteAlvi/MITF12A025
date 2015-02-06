@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <script src="~/Scripts/jquery-2.1.3.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+    <body>
+ <!-- 
+        <!--#######################################-->
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Home/NewArrivals">New Arrivals</a>
+                    </li>
+                    <li>
+                        <a href="#">Shortcuts</a>
+                    </li>
+                    <li>
+                        <a href="#">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/About">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Welcome To The EliteCars</h1>
+                            <p>At Elite Cars we pride ourselves in presenting our cars to the highest of standards. We offer all main dealer facilities, without the inflated showroom prices. We endeavour to be the lowest priced used car sales centre, offering the best cars at the best prices.
+
+With over 20 years of experience in the motor trade you can be sure that we will be able to advise you on the many different aspects of a vehicle purchase whether you have seen a vehicle in our stock, want knowledge of model specifications, details of finance packages or if you know what you want and would like us to source your ideal car for you. As an independent dealer we can offer all this and more with a friendly and personal service.
+
+We offer various finance packages that we can tailor to your needs. All the finance packages are at the most competitive rates available.
+
+We specialise in 4x4’s, 4x4 7 Seater’s, MPV’s, and People Carriers in both Diesel and Petrol forms. We also sell other types of cars from convertibles, sport coupe’s, super cars, small hatchbacks, medium saloons to vans. Makes include – ASTON MARTIN, AUDI, BMW, BENTLEY, CHEVOLET, FORD, HONDA, HYUNDAI, JAGUAR, KIA, LAND ROVER, MAZDA, MERCEDES, MITSUBISHI, NISSAN, PEUGEOT, SKODA, SUBARU, SUZUKI, TOYOTA, VAUXHALL, VW AND VOLVO to name a few makes.
+
+Come and see us and we are confident you will appreciate our honest and customer service led environment..</p>
+                            <p>Make sure to to follow us on <code>TheEliteCars TWITTER & Facebook</code></p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="~/Scripts/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+        <!--########################################-->
+        <div id="MyDate">@ViewBag.MyDate</div>
+        <br />
+        @Ajax.ActionLink("Reload Time", "MyAjax", new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "MyDate", InsertionMode = InsertionMode.Replace })
+    </body>
+</html>

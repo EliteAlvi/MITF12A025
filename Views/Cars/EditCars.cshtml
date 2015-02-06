@@ -1,0 +1,13 @@
+﻿@model TheEliteCars.Models.Car
+@{
+    ViewBag.Title = "EditCars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+<form action="/Cars/updateConfirm/@Model.Id" method="post">
+    Name <input type="text" value="@Model.Name" name="t1" />
+    Price <input type="text" value="@Model.Price" name="t2" />
+    <input type="submit" value="Update Car" />
+</form>
+

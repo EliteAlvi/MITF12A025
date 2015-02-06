@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "SignUpForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddUser", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <br />
+    
+    <div>
+        Name<br />
+        @Html.TextBox("Name") <br />
+
+        Password
+        <br />
+        @Html.TextBox("Password") <br />
+        
+        Car ID
+        <br />
+        @Html.TextBox("CID") <br /><br />
+
+        UPLOAD YOUR IMAGE <br />
+
+        <input type="file" name="file" id="file" style="width: 100%;" /> <br />
+
+        <input type="submit" value="Upload" class="submit" />
+   <!--     <a href="#" class="btn btn-large">Upload</a>-->
+    </div>
+
+}
+
+

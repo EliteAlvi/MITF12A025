@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ELITE CARS</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("EliteCars.com", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    { 
+                    <li>@Html.ActionLink("View Cars", "Index", "Cars")</li>
+                        if (User.IsInRole("A"))
+                        { 
+                    <li>@Html.ActionLink("View Users", "Index", "Users")</li>   
+                    <li>@Html.ActionLink("Add New Cars", "Create", "Cars")</li>
+                    <li>@Html.ActionLink("Add New User", "Create", "Users")</li>
+                        }
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    <li><a href="#">Welcome : @User.Identity.Name</a></li>
+                    }
+                    else
+                    { 
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Signup", "SignUpForm", "Account")</li>
+
+                    }
+                        </ul>
+                <form class="navbar-search pull-right">
+                    <input type="text" placeholder="Search" class="input-medium search-query">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr-->
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -ELITE CARS-All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
